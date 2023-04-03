@@ -1,0 +1,47 @@
+name: ✨Feature request
+description: Request a new feature or function.
+title: '[FEATURE]: '
+labels:
+  - 'enhancement'
+  - 'needs: triage'
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for your request! Please fill up the forms to tell us what actual feature you want to be added.
+  - type: textarea
+    attributes:
+      label: 'Describe the feature:'
+      description: Tell us what the feature seems like.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 'Use case:'
+      description: Tell us why you want this feature.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: 'Reference:'
+      description: What libraries or websites you know that have similar feature?
+  - type: textarea
+    attributes:
+      label: 'Additional context:'
+      description: What else you want to tell us?
+  - type: dropdown
+    attributes:
+      label: Priority
+      multiple: false
+      options:
+        - 'Block (Cannot continue current work without it)'
+        - 'High (Cannot implement several functions without it)'
+        - 'Medium (Have to use some workarounds in current work without it)'
+        - 'Low (It will be better if this feature be added)'
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: Confirmation
+      options:
+        - label: 'I can confirm that there is no duplicated issue.'
+          required: true

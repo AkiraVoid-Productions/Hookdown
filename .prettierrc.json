@@ -1,0 +1,8 @@
+{
+  "arrowParens": "avoid",
+  "jsxSingleQuote": true,
+  "plugins": ["prettier-plugin-jsdoc"],
+  "singleQuote": true,
+  "tabWidth": 2,
+  "endOfLine": "crlf"
+}

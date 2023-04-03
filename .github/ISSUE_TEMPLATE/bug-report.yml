@@ -1,0 +1,62 @@
+name: 🐞Bug report
+description: Report a bug or problem about hookdown.
+title: '[BUG]: '
+labels:
+  - 'bug'
+  - 'needs: triage'
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your reporting! Please fill up the forms to tell us what happened.
+  - type: textarea
+    attributes:
+      label: 'Describe the bug:'
+      description: Tell us what this problem looks like.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 'Environment info:'
+      description: |
+        Install `envinfo` in your project root and run `npx envinfo --system --browsers --managers --binaries --npmPackages '{@akiravoid-productions/*}' --markdown`, then paste the output here.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 'Reproduction:'
+      description: Tell us how to reproduce this problem.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 'Expected behavior:'
+      description: What should this problem actually be?
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Screenshot
+      description: If you have a screenshot which shows the bug's detail, please put it here.
+      placeholder: '![screenshot](/path/to/screenshot "title")'
+  - type: textarea
+    attributes:
+      label: 'Additional context:'
+      description: What else you want to tell us?
+  - type: dropdown
+    attributes:
+      label: Priority
+      multiple: false
+      options:
+        - 'Block (Cannot continue current work without it be fixed)'
+        - 'High (Cannot implement several functions without it be fixed)'
+        - 'Medium (Have to use some workarounds in current work without it be fixed)'
+        - 'Low (It will be better if this bug be fixed)'
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: Confirmation
+      options:
+        - label: 'I can confirm that there is no duplicated issue.'
+          required: true

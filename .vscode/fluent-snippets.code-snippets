@@ -1,0 +1,181 @@
+{
+  // Place your hookdown workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"scope": "javascript,typescript",
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  "Define useComponentStyles hook": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "compstyle",
+    "body": [
+      "export function use${1:ComponentName}Styles(states: $1States) {",
+      "  const classNames = useStyles();",
+      "",
+      "  states.root.className = mergeClasses(",
+      "    ${1/(.*)/${1:/camelcase}/}ClassNames.root,",
+      "    classNames.root,",
+      "    states.root.className",
+      "  );",
+      "",
+      "  $0",
+      "",
+      "  return states;",
+      "}"
+    ]
+  },
+  "Attach styles to slot": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "addstyle",
+    "body": [
+      "if (states.${1:slot}) {",
+      "  states.$1.className = mergeClasses(",
+      "  ${2:componentName}ClassNames.$1,",
+      "  classNames.$1,",
+      "  states.$1.className",
+      "  );",
+      "}$0"
+    ]
+  },
+  "Define useComponent hook": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "usecomp",
+    "body": [
+      "import { UseComponent } from '@/types/UseComponent';",
+      "import {",
+      "${1:ComponentName}Props,",
+      "$1States,",
+      "} from './$1.types';",
+      "",
+      "export const use$1: UseComponent<",
+      "  $1Props,",
+      "  $1States",
+      "> = (props, ref) => {",
+      "  const {$0} = props;",
+      "",
+      "  ",
+      "",
+      " return {}",
+      "};"
+    ]
+  },
+  "Resolve slot": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "resolveslot",
+    "body": [
+      "const resolved${1/(.*)/${1:/pascalcase}/} = resolveShorthand(${1:slot}, {",
+      "  required: true,",
+      "  defaultProps: {},",
+      "});"
+    ]
+  },
+  "Render component": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "rendercomp",
+    "body": [
+      "import { RenderComponent } from '@/types/RenderComponent';",
+      "import {",
+      "  ${1:ComponentName}Slots,",
+      "  $1States,",
+      "} from './$1.types';",
+      "import { getSlots } from '@fluentui/react-components';",
+      "",
+      "export const render$1: RenderComponent<$1States> = states => {",
+      "  const { slots, slotProps } = getSlots<$1Slots>(states);",
+      "  ",
+      "  return <slots.root {...slotProps.root}>$0</slots.root>;",
+      "};"
+    ]
+  },
+  "Add slot": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "addslot",
+    "body": "{slots.${1:slot} && <slots.$1 {...slotProps.$1}>$0</slots.$1>}"
+  },
+  "Define component": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "comp",
+    "body": [
+      "import { ForwardRefComponent } from '@fluentui/react-components';",
+      "import { forwardRef } from 'react';",
+      "import { ${1:ComponentName}Props } from './$1.types';",
+      "import { use$1 } from './$1.props';",
+      "import { use$1Styles } from './$1.styles';",
+      "import { render$1 } from './$1.render';",
+      "",
+      "export const Component: ForwardRefComponent<$1Props> = forwardRef(",
+      "  (props, ref) => {",
+      "    const states = use$1(props, ref);",
+      "    use$1Styles(states);",
+      "",
+      "    return render$1(states);",
+      "  }",
+      ");",
+      "",
+      "Component.displayName = '$1';"
+    ]
+  },
+  "Export component": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "exportcomp",
+    "body": [
+      "import { Component as ${1:ComponentName} } from './$1';",
+      "",
+      "export * from './$1.props';",
+      "export * from './$1.render';",
+      "export * from './$1.styles';",
+      "export * from './$1.types';",
+      "",
+      "export default $1;"
+    ]
+  },
+  "Notify property changed": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "notifyprop",
+    "body": [
+      "private ${1:_property}: ${2:Type} ${3:= ${4:default}};",
+      "public get ${1/^_(.*)$/${1}/}() {",
+      "  return this.$1;",
+      "}",
+      "public set ${1/^_(.*)$/${1}/}(value: $2) {",
+      "  this._setField('$1', value, '${1/^_(.*)$/${1}/}');",
+      "}"
+    ]
+  },
+  "Add useComponent comments": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "commentusecomp",
+    "body": [
+      "/**",
+      "* Given user props, defines default props for the ${1:ComponentName}, and returns",
+      "* processed states.",
+      "*",
+      "* @param props User provided props to the $1 component.",
+      "* @param ref User provided ref to be passed to the $1 component.",
+      "* @returns Processed states.",
+      "*/"
+    ]
+  },
+  "Add renderComponent comments": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "commentrendercomp",
+    "body": [
+      "/**",
+      "* Render the final JSX of ${1:ComponentName}.",
+      "*",
+      "* @param states States processed with user provided props and refs.",
+      "* @returns The final JSX of $1.",
+      "*/"
+    ]
+  }
+}

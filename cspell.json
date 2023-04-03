@@ -1,0 +1,22 @@
+{
+  "dictionaries": ["custom-words"],
+  "dictionaryDefinitions": [
+    { "name": "custom-words", "path": "./custom-words.txt" }
+  ],
+  "ignorePaths": [
+    ".husky/**",
+    ".vscode/**",
+    ".yarn/**",
+    ".gitignore",
+    ".pnp.*",
+    ".prettier*",
+    ".yarnrc.yml",
+    "cspell.json",
+    "next-env.d.ts",
+    "next.config.js",
+    "package.json",
+    "tsconfig.json",
+    "yarn.lock",
+    ".releaserc.json"
+  ]
+}

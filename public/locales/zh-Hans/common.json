@@ -1,0 +1,7 @@
+{
+  "themeSelector.themeLight": "Light theme",
+  "themeSelector.themeDark": "Dark theme",
+  "themeSelector.themeFollowBrowser": "Follow browser theme",
+  "themeSelector.tooltip": "Change the theme of this website.",
+  "markdownEditor.toolBar.settings.tooltip": "Settings"
+}

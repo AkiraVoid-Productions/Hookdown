@@ -1,0 +1,36 @@
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+name: release
+
+env:
+  GH_TOKEN: ${{ secrets.REPO_TOKEN }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.4.0
+      - name: Set node.js environment
+        uses: actions/setup-node@v3.6.0
+        with:
+          node-version: 18.15.0
+      - name: Enable yarn
+        run: |
+          corepack enable
+          corepack prepare yarn@stable --activate
+      - name: Install dependencies
+        run: yarn install
+      - name: Build package
+        run: yarn build
+      - name: Zip deployment pack
+        run: zip -r deployment-pack.zip .next next.config.js package.json ecosystem.config.js next-i18next.config.js public
+      - name: Release
+        run: yarn semantic-release

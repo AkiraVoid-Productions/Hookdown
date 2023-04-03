@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "arcanis.vscode-zipfs",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "wmaurer.change-case",
+    "exodiusstudios.comment-anchors",
+    "oouo-diogo-perdigao.docthis",
+    "selfrefactor.order-props",
+    "edwardhjp.vscode-author-generator",
+    "streetsidesoftware.code-spell-checker"
+  ]
+}
