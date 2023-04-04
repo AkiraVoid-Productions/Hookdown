@@ -9,22 +9,22 @@ import ThemeContext, { ThemeContextType } from '../contexts/Theme';
 import { getConfig, setConfig } from './userConfig';
 
 const brandColors: BrandVariants = {
-  10: '#071f36',
-  20: '#092948',
-  30: '#0c335a',
-  40: '#0e3d6c',
-  50: '#10477e',
-  60: '#135290',
-  70: '#155ca2',
-  80: '#1661ab',
-  90: '#1a70c7',
-  100: '#1c7ad9',
-  110: '#2685e3',
-  120: '#388fe5',
-  130: '#4a99eb',
-  140: '#5da3ea',
-  150: '#6fadec',
-  160: '#81b8ef',
+  10: '#000000',
+  20: '#14121C',
+  30: '#1F1E32',
+  40: '#2B2A4A',
+  50: '#383763',
+  60: '#44447D',
+  70: '#515298',
+  80: '#6060AF',
+  90: '#7170BF',
+  100: '#8280CD',
+  110: '#9491DA',
+  120: '#A6A2E5',
+  130: '#B8B4EE',
+  140: '#CAC6F5',
+  150: '#DCD9FB',
+  160: '#EEECFE',
 };
 
 const lightTheme: Theme = {
