@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/AkiraVoid-Productions/Hookdown/compare/v1.0.0...v1.0.1) (2023-04-04)
+
+
+### Bug Fixes
+
+* **theme:** change visual theme ([#11](https://github.com/AkiraVoid-Productions/Hookdown/issues/11)) ([a2ce103](https://github.com/AkiraVoid-Productions/Hookdown/commit/a2ce103726bfb2cce3fd1e7317b65e7e66758b58))
+
 ## 1.0.0 (2023-04-04)
 
 
