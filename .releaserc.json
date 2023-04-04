@@ -20,6 +20,12 @@
         "npmPublish": false
       }
     ],
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "zip -r deployment-pack.zip .next next.config.js package.json ecosystem.config.js next-i18next.config.js public README.md CHANGELOG.md"
+      }
+    ],
     "@semantic-release/git",
     [
       "@semantic-release/github",

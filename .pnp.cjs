@@ -33,6 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@fluentui/react-utilities", "virtual:0f2f2d74f260918bb548da57c419c532618101e6184be64a22e894444e8a9ac92359d2c31b8f1ad99d71bd963cdd961fa33d27e55887806ec38e1e1d91663ba4#npm:9.7.2"],\
             ["@monaco-editor/react", "virtual:0f2f2d74f260918bb548da57c419c532618101e6184be64a22e894444e8a9ac92359d2c31b8f1ad99d71bd963cdd961fa33d27e55887806ec38e1e1d91663ba4#npm:4.4.6"],\
             ["@semantic-release/changelog", "virtual:0f2f2d74f260918bb548da57c419c532618101e6184be64a22e894444e8a9ac92359d2c31b8f1ad99d71bd963cdd961fa33d27e55887806ec38e1e1d91663ba4#npm:6.0.3"],\
+            ["@semantic-release/exec", "virtual:0f2f2d74f260918bb548da57c419c532618101e6184be64a22e894444e8a9ac92359d2c31b8f1ad99d71bd963cdd961fa33d27e55887806ec38e1e1d91663ba4#npm:6.0.3"],\
             ["@semantic-release/git", "virtual:0f2f2d74f260918bb548da57c419c532618101e6184be64a22e894444e8a9ac92359d2c31b8f1ad99d71bd963cdd961fa33d27e55887806ec38e1e1d91663ba4#npm:10.0.1"],\
             ["@types/node", "npm:18.15.3"],\
             ["@types/react", "npm:18.0.28"],\
@@ -3352,6 +3353,34 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@semantic-release-error-npm-3.0.0-238eebf38b-29c4391ecb.zip/node_modules/@semantic-release/error/",\
           "packageDependencies": [\
             ["@semantic-release/error", "npm:3.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@semantic-release/exec", [\
+        ["npm:6.0.3", {\
+          "packageLocation": "./.yarn/cache/@semantic-release-exec-npm-6.0.3-bc09293452-c6ad2f02ff.zip/node_modules/@semantic-release/exec/",\
+          "packageDependencies": [\
+            ["@semantic-release/exec", "npm:6.0.3"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:0f2f2d74f260918bb548da57c419c532618101e6184be64a22e894444e8a9ac92359d2c31b8f1ad99d71bd963cdd961fa33d27e55887806ec38e1e1d91663ba4#npm:6.0.3", {\
+          "packageLocation": "./.yarn/__virtual__/@semantic-release-exec-virtual-34d9ce6e9b/0/cache/@semantic-release-exec-npm-6.0.3-bc09293452-c6ad2f02ff.zip/node_modules/@semantic-release/exec/",\
+          "packageDependencies": [\
+            ["@semantic-release/exec", "virtual:0f2f2d74f260918bb548da57c419c532618101e6184be64a22e894444e8a9ac92359d2c31b8f1ad99d71bd963cdd961fa33d27e55887806ec38e1e1d91663ba4#npm:6.0.3"],\
+            ["@semantic-release/error", "npm:3.0.0"],\
+            ["@types/semantic-release", null],\
+            ["aggregate-error", "npm:3.1.0"],\
+            ["debug", "virtual:a51f526c2adeba537acab82695794a9d1b157226503eb6a4b845884ae37134eb991f7fe73ca28a4380b8fcf50c4baf959f57e6800dc81e7afb4b90477e3f77d2#npm:4.3.4"],\
+            ["execa", "npm:5.1.1"],\
+            ["lodash", "npm:4.17.21"],\
+            ["parse-json", "npm:5.2.0"],\
+            ["semantic-release", "npm:21.0.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/semantic-release",\
+            "semantic-release"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -6966,6 +6995,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@fluentui/react-utilities", "virtual:0f2f2d74f260918bb548da57c419c532618101e6184be64a22e894444e8a9ac92359d2c31b8f1ad99d71bd963cdd961fa33d27e55887806ec38e1e1d91663ba4#npm:9.7.2"],\
             ["@monaco-editor/react", "virtual:0f2f2d74f260918bb548da57c419c532618101e6184be64a22e894444e8a9ac92359d2c31b8f1ad99d71bd963cdd961fa33d27e55887806ec38e1e1d91663ba4#npm:4.4.6"],\
             ["@semantic-release/changelog", "virtual:0f2f2d74f260918bb548da57c419c532618101e6184be64a22e894444e8a9ac92359d2c31b8f1ad99d71bd963cdd961fa33d27e55887806ec38e1e1d91663ba4#npm:6.0.3"],\
+            ["@semantic-release/exec", "virtual:0f2f2d74f260918bb548da57c419c532618101e6184be64a22e894444e8a9ac92359d2c31b8f1ad99d71bd963cdd961fa33d27e55887806ec38e1e1d91663ba4#npm:6.0.3"],\
             ["@semantic-release/git", "virtual:0f2f2d74f260918bb548da57c419c532618101e6184be64a22e894444e8a9ac92359d2c31b8f1ad99d71bd963cdd961fa33d27e55887806ec38e1e1d91663ba4#npm:10.0.1"],\
             ["@types/node", "npm:18.15.3"],\
             ["@types/react", "npm:18.0.28"],\

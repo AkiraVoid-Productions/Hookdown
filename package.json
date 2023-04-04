@@ -8,7 +8,7 @@
     "remarkjs",
     "unfiedjs"
   ],
-  "version": "1.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/AkiraVoid-Productions/Hookdown",
@@ -61,6 +61,7 @@
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@types/node": "18.15.3",
     "@types/react": "18.0.28",
