@@ -30,7 +30,5 @@ jobs:
         run: yarn install
       - name: Build package
         run: yarn build
-      - name: Zip deployment pack
-        run: zip -r deployment-pack.zip .next next.config.js package.json ecosystem.config.js next-i18next.config.js public README.md CHANGELOG.md
       - name: Release
         run: yarn semantic-release
