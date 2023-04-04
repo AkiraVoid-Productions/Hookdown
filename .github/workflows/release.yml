@@ -22,6 +22,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.4.0
+        with:
+          token: ${{ secrets.ROBOT_TOKEN }}
+      - name: Set git user
+        run: |
+          git config user.name "akiravoid-bot"
+          git config user.email "coding@akiravoid.com"
       - name: Set node.js environment
         uses: actions/setup-node@v3.6.0
         with:
