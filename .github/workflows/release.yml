@@ -10,7 +10,11 @@ permissions:
 name: release
 
 env:
-  GH_TOKEN: ${{ secrets.REPO_TOKEN }}
+  GH_TOKEN: ${{ secrets.ROBOT_TOKEN }}
+  GIT_AUTHOR_NAME: akiravoid-bot
+  GIT_AUTHOR_EMAIL: coding@akiravoid.com
+  GIT_COMMITTER_NAME: akiravoid-bot
+  GIT_COMMITTER_EMAIL: akiravoid-bot
 
 jobs:
   release:
