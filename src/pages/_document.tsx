@@ -55,6 +55,7 @@ class HookdownDocument extends Document {
             integrity='sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC'
             crossOrigin='anonymous'
           />
+          <link rel='icon' href='/favicon.ico' />
         </Head>
         <body>
           <Main />

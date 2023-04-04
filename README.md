@@ -1,5 +1,7 @@
 # Hookdown
 
+![preview](https://github.com/AkiraVoid-Productions/Hookdown/main/public/img/github-preview.png)
+
 Hookdown is a website that hosts a Markdown editor. By using hookdown, you could edit Markdown without any other efforts, and most importantly, it let you configure a webhook which could be used to automatically publish your works.
 
 ## Usage and deployment
