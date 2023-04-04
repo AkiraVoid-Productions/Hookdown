@@ -18,8 +18,11 @@ The usage of Hookdown is quite simple right now. Basically you could just use it
 ### Deploy Hookdown by yourself
 
 1. Install [Node.js](https://nodejs.org/en). Hookdown is written on Node.js v18.15.0, and has not been tested on other versions, so we suggest you use the same version. But in theory, it should be usable on other versions that Next.js 13 supports (Node.js 14.6.0 or newer).
-2. [Go to releases page](https://github.com/AkiraVoid-Productions/Hookdown/releases) to download the deployment pack.
+2. [Go to releases page](https://github.com/AkiraVoid-Productions/Hookdown/releases) to download the `hookdown-deployment-pack` of specified version, or [Go to download the latest pack directly](https://github.com/AkiraVoid-Productions/Hookdown/releases/latest).
 3. Unzip the deployment pack to anywhere you like.
+
+#### For NPM users:
+
 4. At the root directory of unzipped deployment pack, run following code in bash/cmd:
    ```bash
    npm install --omit=dev
@@ -27,15 +30,54 @@ The usage of Hookdown is quite simple right now. Basically you could just use it
    ```
 5. Now your app should be successfully started. By default it listens to port 3000, you could use the switch `-p` to specify other ports. For example, run `npm run start -p 3001` to listen to port 3001.
 
+#### For yarn users:
+
+4. [Enable yarn corepack](https://yarnpkg.com/getting-started/install).
+5. Locates to the root directory of unzipped deployment pack.
+6. Install workspace tool by running following code in bash/cmd:
+   ```bash
+   yarn plugin import workspace-tools
+   ```
+   This command will download a package from `raw.githubusercontent.com`, so you may need [set yarn proxy](https://yarnpkg.com/configuration/yarnrc#httpsProxy) to make it accessible.
+7. Then run:
+   ```bash
+   yarn workspaces focus --production
+   yarn start
+   ```
+8. Now your app should be successfully started. By default it listens to port 3000, you could use the switch `-p` to specify other ports. For example, run `yarn start -p 3001` to listen to port 3001.
+
+#### Use Process Manager 2 (PM2) to daemonize process
+
+The deployment pack includes a `ecosystem.config.js` file which could be used by PM2 to daemonize your app. This is designed for yarn, so make sure you have executed [these steps](#for-yarn-users) and have not got any error.
+
+| ℹ INFO                                                                                                                                                                                                                                                                                                                                                    |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Although the original `ecosystem.config.js` is designed for yarn, you could simply change some of its configurations to switch to npm. Basically, all you need to do is change `script: "yarn"` to `script: "npm run"`. For more info about PM2's `ecosystem.config.js`, see [their docs](https://pm2.keymetrics.io/docs/usage/application-declaration/). |
+
+1. To install PM2 on your server, run following code in bash/cmd:
+   ```bash
+   npm i -g pm2
+   ```
+2. Then run following code start and daemonize your app:
+   ```bash
+   pm2 start ecosystem.config.js
+   ```
+3. The status of your app could be checked by:
+   ```bash
+   pm2 list
+   ```
+
+For more info about PM2, see [their docs](https://pm2.keymetrics.io/docs/usage/process-management/).
+
 ## For contributors
 
-For programmers who want to submit code to this repo, these are all we ask:
+For programmers who want to submit code to this repo, we ask you:
 
 - Respect the code styles of this repo.
 - Before making pull request, make sure that there is an issue about what you are going to do.
 - Commit with conventional commits.
 
-For all contributors and who want to contribute, make sure you've read the [Code of Conduct](https://github.com/AkiraVoid-Productions/Hookdown/blob/main/CODE_OF_CONDUCT.md).
+For all contributors and who want to contribute, make sure you followed the [Code of Conduct](https://github.com/AkiraVoid-Productions/Hookdown/blob/main/CODE_OF_CONDUCT.md).
 
 ## Development guidance
 

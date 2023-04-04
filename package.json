@@ -19,7 +19,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "husky install"
+    "postinstall": "husky install || exit 0"
   },
   "lint-staged": {
     "*": [
