@@ -14,7 +14,8 @@ jobs:
         with:
           token: ${{ secrets.ROBOT_TOKEN }}
       - name: Checkout latest release tag
-        run: echo "LATEST_TAG=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+        uses: WyriHaximus/github-action-get-previous-tag@v1
+        id: tag
       - name: Clear existing files
         run: |
           cd /usr/share/nginx/sites/hookdown
@@ -22,7 +23,7 @@ jobs:
       - name: Download deployment pack
         run: |
           cd /usr/share/nginx/sites/hookdown
-          sudo wget https://github.com/AkiraVoid-Productions/Hookdown/releases/download/$LATEST_TAG/hookdown-deployment-pack.zip
+          sudo wget https://github.com/AkiraVoid-Productions/Hookdown/releases/download/${{ steps.tag.outputs.tag }}/hookdown-deployment-pack.zip
           sudo unzip hookdown-deployment-pack.zip
           sudo rm -f hookdown-deployment-pack.zip
       - name: Configure yarn
