@@ -10,9 +10,7 @@ jobs:
     runs-on: [self-hosted, Linux, X64, 2c2g4m]
     steps:
       - name: Checkout
-        uses: actions/checkout@v3.4.0
-        with:
-          token: ${{ secrets.ROBOT_TOKEN }}
+        run: git clone https://github.com/AkiraVoid-Productions/Hookdown
       - name: Checkout latest release tag
         run: echo "LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)" >> $GITHUB_ENV
       - name: Clear existing files
