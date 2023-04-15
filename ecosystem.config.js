@@ -2,8 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'AkiraVoid.Hookdown',
-      interpreter: 'bash',
-      args: 'start',
+      args: 'start -p 3004',
       script: 'yarn',
     },
   ],
