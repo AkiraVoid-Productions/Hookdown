@@ -14,7 +14,7 @@ jobs:
         with:
           token: ${{ secrets.ROBOT_TOKEN }}
       - name: Checkout latest release tag
-        run: export LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+        run: echo "LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)" >> $GITHUB_ENV
       - name: Clear existing files
         run: |
           cd /usr/share/nginx/sites/hookdown
